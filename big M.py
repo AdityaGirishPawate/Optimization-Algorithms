@@ -5,12 +5,15 @@ INFINITY = 10e9
 
 
 def take_input():
+    optimization = str(input())
     # print("Enter the number of variables in the objective function")
     n = int(input())
     # print("Enter the number of constraints")
     m = int(input())
     # print("Enter the coefficients of the Objective Function")
     c = [float(i) for i in input().split(" ")]
+    if optimization == 'min':
+        c = [-z for z in c]
     # print("Enter the value of the constant in the objective function")
     d = float(input())
     # print("Enter the matrix A which is the coefficient of the constraints row by row")
@@ -21,14 +24,20 @@ def take_input():
     b = [float(i) for i in input().split(" ")]
     # print("Enter the equation or in-equation type fo the variable")
     s = input().split(" ")
-    return n, m, a, c, d, b, s
+    return n, m, a, c, d, b, s, optimization
 
 
-def val_objective_function(c, x, d):
-    return np.dot(c, x) + d
+def val_objective_function(c, x, d, optimization):
+    if optimization == 'max':
+        return np.dot(c, x) + d
+    else:
+        return -np.dot(c, x) + d
 
 
-def print_standard_form(n, m, a, c, d, b, s, M):
+def print_standard_form(n, m, a, c, d, b, s, M, optimization):
+    num_artificial_variables = 0
+    num_surplus_variables = 0
+    num_slack_variables = 0
     obj_func = ""
     for i, c_prime in enumerate(c):
         obj_func += str(c_prime) + "x" + str(i + 1)
@@ -41,59 +50,73 @@ def print_standard_form(n, m, a, c, d, b, s, M):
     x = []
     add_col = []
     c_hash = [l for l in c]
+    list_of_nonbasic_variables = []
     list_of_basic_variables = []
-    list_of_non_basic_variables = []
     for i in range(n):
-        list_of_basic_variables.append("x" + str(i + 1))
+        list_of_nonbasic_variables.append("x" + str(i + 1))
         x.append(0)
     for j, row in enumerate(a):
         constraint = ""
         for i, a_prime in enumerate(row):
             constraint += str(a_prime) + "x" + str(i + 1) + " + " * (i != len(row) - 1)
-        if s[j] == "=" or s[j] == "<=":
+        if s[j] == "=":
             constraint += " + x" + str(k)
-            list_of_non_basic_variables.append("x" + str(k))
+            list_of_basic_variables.append("x" + str(k))
+            x.append(b[j])
+            c_hash.append(-M)
+            k += 1
+            num_artificial_variables+=1
+        elif s[j] == "<=":
+            constraint += " + x" + str(k)
+            list_of_basic_variables.append("x" + str(k))
             x.append(b[j])
             c_hash.append(0)
             k += 1
+            num_slack_variables+=1
         else:
             constraint += " - x" + str(k) + " + x" + str(k + 1)
-            list_of_non_basic_variables.append("x" + str(k + 1))
+            list_of_basic_variables.append("x" + str(k + 1))
             x.append(0)
             c_hash.append(0)
-            list_of_basic_variables.append("x" + str(k))
+            list_of_nonbasic_variables.append("x" + str(k))
             x.append(b[j])
+            num_surplus_variables+=1
             temp_col = np.zeros((m,))
             temp_col[j] = -1
             add_col.append(temp_col)
             c.append(-M)
-            c_hash.append((-M))
+            c_hash.append(-M)
+            num_artificial_variables+=1
             k += 2
         constraint += " = " + str(b[j])
         print(constraint)
     for alpha in range(m):
         for beta in range(n):
-            c[beta] -= a[alpha][beta]*(-M)
-    if len(list_of_basic_variables) - size > 0:
+            if s[alpha]=='=' or s[alpha]=='>=':
+                c[beta] -= a[alpha][beta] * (-M)
+    if len(list_of_nonbasic_variables) - size > 0:
         additional = np.array(add_col).transpose()
         a = np.concatenate([a, additional], axis=1)
+    print("The number of Slack variables used is: ", num_slack_variables)
+    print("The number of Artificial variables used is: ", num_artificial_variables)
+    print("The number of Surplus variables used is: ", num_surplus_variables)
     return n, m, np.array(a), np.array(c), np.array(c_hash), d, np.array(
-        b), s, list_of_basic_variables, list_of_non_basic_variables, np.array(x)
+        b), s, list_of_nonbasic_variables, list_of_basic_variables, np.array(x), num_surplus_variables, num_slack_variables, num_artificial_variables
 
 
-def print_table(a_prime, c_prime, d_prime, b_prime, c, list_of_basic_variables, list_of_non_basic_variables, x):
+def print_table(a_prime, c_prime, d_prime, b_prime, c, list_of_nonbasic_variables, list_of_basic_variables, x, optimization):
     l_ = []
-    for basic in list_of_basic_variables:
+    for basic in list_of_nonbasic_variables:
         l_.append(basic + '=' + str(x[int(basic[1]) - 1]))
-    print("B = ", l_)
+    print("Non Basic Variables = ", l_)
     l_ = []
-    for non_basic in list_of_non_basic_variables:
+    for non_basic in list_of_basic_variables:
         l_.append(non_basic + '=' + str(x[int(non_basic[1]) - 1]))
-    print("N = ", l_)
+    print("Basic Variables = ", l_)
     print(a_prime)
     print(b_prime)
     print(-c_prime)
-    print("So the optimal value of objective function is:", round(val_objective_function(c, x, d_prime), 5))
+    print("So the optimal value of objective function is:", round(val_objective_function(c, x, d_prime, optimization), 5))
 
 
 def print_pivot(cv, v, u, ratios, min_ratio, pivot):
@@ -103,8 +126,9 @@ def print_pivot(cv, v, u, ratios, min_ratio, pivot):
     print("The pivot element is ", pivot, " and corresponding coordinates(1 based indexing) is", u + 1, " ", v + 1)
 
 
-def simplex(n_prime, m_prime, a_prime, c_prime, c, d_prime, b_prime, list_of_basic_variables, list_of_non_basic_variables,
-            x):
+def simplex(n_prime, m_prime, a_prime, c_prime, c, d_prime, b_prime, list_of_nonbasic_variables,
+            list_of_basic_variables,
+            x, optimization, num_surplus_variables, num_slack_variables, num_artificial_variables):
     ite = 0
     n_prime = a.shape[1]
     m_prime = a.shape[0]
@@ -112,21 +136,37 @@ def simplex(n_prime, m_prime, a_prime, c_prime, c, d_prime, b_prime, list_of_bas
         ite += 1
         print("-" * 60)
         print("Iteration ", ite)
-        print_table(a_prime, c_prime, d_prime, b_prime, c, list_of_basic_variables, list_of_non_basic_variables, x)
+        print_table(a_prime, c_prime, d_prime, b_prime, c, list_of_nonbasic_variables, list_of_basic_variables, x, optimization)
         v = np.argmax(c_prime)
         cv = c_prime[v]
         if cv < 0:
-            print("-" * 60)
-            print("The iterations have ended")
-            print("This is the list of all the basic variables are ", list_of_basic_variables)
-            print("This is the list of all non-basic variables are ", list_of_non_basic_variables)
-            print("The values for x are:")
-            li = []
-            for i in range(len(x)):
-                li.append("x" + str(i + 1) + '=' + str(round(x[i], 5)))
-            print(li)
-            print("So the Final value of objective function is:", round(val_objective_function(c, x, d_prime), 5))
-            return
+            if ite > num_artificial_variables:
+                print("-" * 60)
+                print("The iterations have ended")
+                print("This is the list of all the basic variables are ", list_of_nonbasic_variables)
+                print("This is the list of all non-basic variables are ", list_of_basic_variables)
+                print("The values for x are:")
+                li = []
+                for i in range(len(x)):
+                    li.append("x" + str(i + 1) + '=' + str(round(x[i], 5)))
+                print(li)
+                print("So the Final value of objective function is:", round(val_objective_function(c, x, d_prime, optimization), 5))
+                return
+            else:
+                print("-" * 60)
+                print("The Solution is infeasible because all artificial variables are not zero")
+                print("This is the list of all the basic variables are ", list_of_nonbasic_variables)
+                print("This is the list of all non-basic variables are ", list_of_basic_variables)
+                print("The values for x are:")
+                li = []
+                for i in range(len(x)):
+                    li.append("x" + str(i + 1) + '=' + str(round(x[i], 5)))
+                print(li)
+                print("As you can see the the value of objective function is :",
+                      round(val_objective_function(c, x, d_prime, optimization), 5), "which is huge because all "
+                                                                                     "artificial variables are not "
+                                                                                     "zero")
+                return
         if cv == 0:
             x_1 = np.copy(x)
             ratios = np.empty((m_prime,))
@@ -171,17 +211,17 @@ def simplex(n_prime, m_prime, a_prime, c_prime, c, d_prime, b_prime, list_of_bas
             a_prime = np.copy(a_new)
             c_prime = np.copy(c_new)
             b_prime = np.copy(b_new)
-            temp1 = list_of_basic_variables[v]
-            list_of_basic_variables[v] = list_of_non_basic_variables[u]
-            list_of_non_basic_variables[u] = temp1
+            temp1 = list_of_nonbasic_variables[v]
+            list_of_nonbasic_variables[v] = list_of_basic_variables[u]
+            list_of_basic_variables[u] = temp1
             for i in range(m_prime):
-                s = list_of_non_basic_variables[i]
+                s = list_of_basic_variables[i]
                 x[int(s[1]) - 1] = b_prime[i]
             for i in range(n_prime):
-                s = list_of_basic_variables[i]
+                s = list_of_nonbasic_variables[i]
                 x[int(s[1]) - 1] = 0
             x_2 = np.copy(x)
-            print_table(a_prime, c_prime, d_prime, b_prime, c, list_of_basic_variables, list_of_non_basic_variables, x)
+            print_table(a_prime, c_prime, d_prime, b_prime, c, list_of_nonbasic_variables, list_of_basic_variables, x, optimization)
             print("There are infinitely many solutions of the form: \u03BB", x_1, " + (1-\u03BB)", x_2)
             return
         else:
@@ -205,7 +245,7 @@ def simplex(n_prime, m_prime, a_prime, c_prime, c, d_prime, b_prime, list_of_bas
             if min_ratio == INFINITY:
                 print("-" * 60)
                 print("The problem is unbounded")
-                print("The value of objective function is:", val_objective_function(c, x, d_prime))
+                print("The value of objective function is:", val_objective_function(c, x, d_prime, optimization))
                 print("The values for x are:", x)
                 return
             a_new = np.empty((m_prime, n_prime))
@@ -222,9 +262,9 @@ def simplex(n_prime, m_prime, a_prime, c_prime, c, d_prime, b_prime, list_of_bas
             c_new = np.copy(c_prime)
             for j in range(n_prime):
                 if j == v:
-                    c_new[j] = round(-c_prime[j] / pivot,6)
+                    c_new[j] = round(-c_prime[j] / pivot, 6)
                 else:
-                    c_new[j] = round((pivot * c_prime[j] - c_prime[v] * a_prime[u][j]) / pivot,6)
+                    c_new[j] = round((pivot * c_prime[j] - c_prime[v] * a_prime[u][j]) / pivot, 6)
             b_new = np.copy(b_prime)
             for j in range(m_prime):
                 if j == u:
@@ -234,16 +274,15 @@ def simplex(n_prime, m_prime, a_prime, c_prime, c, d_prime, b_prime, list_of_bas
             a_prime = np.copy(a_new)
             c_prime = np.copy(c_new)
             b_prime = np.copy(b_new)
-            temp1 = list_of_basic_variables[v]
-            list_of_basic_variables[v] = list_of_non_basic_variables[u]
-            list_of_non_basic_variables[u] = temp1
+            temp1 = list_of_nonbasic_variables[v]
+            list_of_nonbasic_variables[v] = list_of_basic_variables[u]
+            list_of_basic_variables[u] = temp1
             for i in range(m_prime):
-                s = list_of_non_basic_variables[i]
+                s = list_of_basic_variables[i]
                 x[int(s[1]) - 1] = b_prime[i]
             for i in range(n_prime):
-                s = list_of_basic_variables[i]
+                s = list_of_nonbasic_variables[i]
                 x[int(s[1]) - 1] = 0
-
 
 
 if __name__ == '__main__':
@@ -252,11 +291,13 @@ if __name__ == '__main__':
     M = 10000
     for i in range(t):
         print("*" * 60)
-        print("This is the solution to the testcase number ", i + 1)
-        n, m, a, c, d, b, s = take_input()
+        # print("This is the solution to the testcase number ", i + 1)
+        n, m, a, c, d, b, s, optimization = take_input()
         # Question 1
-        n, m, a, c, c_hash, d, b, s, list_of_basic_variables, list_of_non_basic_variables, x = print_standard_form(n, m, a, c,
-                                                                                                           d, b, s,
-                                                                                                           M)
+        n, m, a, c, c_hash, d, b, s, list_of_nonbasic_variables, list_of_basic_variables, x, num_surplus_variables, num_slack_variables, num_artificial_variables = print_standard_form(n, m,
+                                                                                                                   a, c,
+                                                                                                                   d, b,
+                                                                                                                   s,
+                                                                                                                   M, optimization)
         # simplex method
-        simplex(n, m, a, c, c_hash, d, b, list_of_basic_variables, list_of_non_basic_variables, x)
+        simplex(n, m, a, c, c_hash, d, b, list_of_nonbasic_variables, list_of_basic_variables, x, optimization, num_surplus_variables, num_slack_variables, num_artificial_variables)
