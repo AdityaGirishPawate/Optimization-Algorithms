@@ -1,5 +1,5 @@
 # Optimization-Algorithms
-This contains the python code for Optimization Methods for following methods<br>
+### This repo contains the python code for Optimization Methods for following methods<br>
 ## 1) Basic feasible solution methods <br>
 ## 2) Simplex Method <br>
 ## 3) Big M method <br>
