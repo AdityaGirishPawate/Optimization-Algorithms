@@ -1,0 +1,719 @@
+// Output 1
+The objective function to maximize is: 
+-2.0x1 + -15.0x2 + -18.0x3 + 0.0
+
+The standard form of the constraints using slack/surplus variables is:
+1.0x1 + -2.0x2 + 6.0x3 - x4 + x5 = 10.0
+0.0x1 + 1.0x2 + 2.0x3 + x6 = 6.0
+2.0x1 + 0.0x2 + 10.0x3 + x7 = 19.0
+1.0x1 + -1.0x2 + -0.0x3 - x8 + x9 = 2.0
+[[ 1. -2.  6. -1.  0.]
+ [ 0.  1.  2.  0.  0.]
+ [ 2.  0. 10.  0.  0.]
+ [ 1. -1. -0.  0. -1.]]
+[-10000.      0.      0. -10000.]
+[ -2. -15. -18.   0.   0.]
+['x1', 'x2', 'x3', 'x4', 'x8']
+['x5', 'x6', 'x7', 'x9']
+The objective function to maximize is
+-2.0x1 -15.0x2 -18.0x3 --0.0x4 --0.0x8  +  0.0
+------------------------------------------------------------
+Iteration  1
+The value of Objective function in this iteration is  120000.0
+The values for x are:
+['x1=0.0', 'x2=0.0', 'x3=0.0', 'x4=0.0', 'x5=10.0', 'x6=6.0', 'x7=19.0', 'x8=0.0', 'x9=2.0']
+This is the list of all the basic variables are  ['x5', 'x6', 'x7', 'x9']
+This is the list of all non-basic variables are  ['x1', 'x2', 'x3', 'x4', 'x8']
+The matrix form of A is
+[[ 1. -2.  6. -1.  0.]
+ [ 0.  1.  2.  0.  0.]
+ [ 2.  0. 10.  0.  0.]
+ [ 1. -1. -0.  0. -1.]]
+The value of Zj-Cj are
+[-19998.  30015. -59982.  10000.  10000.]
+The values of basic solutions X_b are
+[10.  6. 19.  2.]
+The value of most negative c is -59982.0  Corresponding to column 3
+The ratios are for corresponding column [1.66666667 3.         1.9        0.        ]
+The minimum ratio is: 1.6666666666666667
+The pivot element is  6.0  and corresponding coordinates(1 based indexing) is 1   3
+------------------------------------------------------------
+Iteration  2
+The value of Objective function in this iteration is  20030.0
+The values for x are:
+['x1=0.0', 'x2=0.0', 'x3=1.6666666666666667', 'x4=0.0', 'x5=0.0', 'x6=2.6666666666666665', 'x7=2.3333333333333335', 'x8=0.0', 'x9=2.0']
+This is the list of all the basic variables are  ['x3', 'x6', 'x7', 'x9']
+This is the list of all non-basic variables are  ['x1', 'x2', 'x5', 'x4', 'x8']
+The matrix form of A is
+[[ 0.16666667 -0.33333333  0.16666667 -0.16666667  0.        ]
+ [-0.33333333  1.66666667 -0.33333333  0.33333333  0.        ]
+ [ 0.33333333  3.33333333 -1.66666667  1.66666667  0.        ]
+ [ 1.         -1.          0.          0.         -1.        ]]
+The value of Zj-Cj are
+[-1.0001e+04  1.0021e+04  9.9970e+03  3.0000e+00  1.0000e+04]
+The values of basic solutions X_b are
+[1.66666667 2.66666667 2.33333333 2.        ]
+The value of most negative c is -10001.0  Corresponding to column 1
+The ratios are for corresponding column [10. -8.  7.  2.]
+The minimum ratio is: 2.0
+The pivot element is  1.0  and corresponding coordinates(1 based indexing) is 4   1
+------------------------------------------------------------
+Iteration  3
+The value of Objective function in this iteration is  28.0
+The values for x are:
+['x1=2.0', 'x2=0.0', 'x3=1.3333333333333335', 'x4=0.0', 'x5=0.0', 'x6=3.333333333333333', 'x7=1.666666666666667', 'x8=0.0', 'x9=0.0']
+This is the list of all the basic variables are  ['x3', 'x6', 'x7', 'x1']
+This is the list of all non-basic variables are  ['x9', 'x2', 'x5', 'x4', 'x8']
+The matrix form of A is
+[[-0.16666667 -0.16666667  0.16666667 -0.16666667  0.16666667]
+ [ 0.33333333  1.33333333 -0.33333333  0.33333333 -0.33333333]
+ [-0.33333333  3.66666667 -1.66666667  1.66666667  0.33333333]
+ [ 1.         -1.          0.          0.         -1.        ]]
+The value of Zj-Cj are
+[ 1.0001e+04  2.0000e+01  9.9970e+03  3.0000e+00 -1.0000e+00]
+The values of basic solutions X_b are
+[1.33333333 3.33333333 1.66666667 2.        ]
+The value of most negative c is -1.0  Corresponding to column 5
+The ratios are for corresponding column [  8. -10.   5.  -2.]
+The minimum ratio is: 5.000000000000001
+The pivot element is  0.3333333333333333  and corresponding coordinates(1 based indexing) is 3   5
+------------------------------------------------------------
+Iteration  4
+The value of Objective function in this iteration is  23.0
+The values for x are:
+['x1=7.000000000000001', 'x2=0.0', 'x3=0.5000000000000001', 'x4=0.0', 'x5=0.0', 'x6=5.0', 'x7=0.0', 'x8=5.000000000000001', 'x9=0.0']
+This is the list of all the basic variables are  ['x3', 'x6', 'x8', 'x1']
+This is the list of all non-basic variables are  ['x9', 'x2', 'x5', 'x4', 'x7']
+The matrix form of A is
+[[ 0.  -2.   1.  -1.  -0.5]
+ [ 0.   5.  -2.   2.   1. ]
+ [-1.  11.  -5.   5.   3. ]
+ [ 0.  10.  -5.   5.   3. ]]
+The value of Zj-Cj are
+[1.000e+04 3.100e+01 9.992e+03 8.000e+00 3.000e+00]
+The values of basic solutions X_b are
+[0.5 5.  5.  7. ]
+------------------------------------------------------------
+The iterations have ended
+This is the list of all the basic variables are  ['x9', 'x2', 'x5', 'x4', 'x7']
+This is the list of all non-basic variables are  ['x3', 'x6', 'x8', 'x1']
+The values for x are:
+['x1=7.0', 'x2=0.0', 'x3=0.5', 'x4=0.0', 'x5=0.0', 'x6=5.0', 'x7=0.0', 'x8=5.0', 'x9=0.0']
+So the Final value of objective function is: 23.0
+Non Basic Variables =  ['x9', 'x2', 'x5', 'x4', 'x7']
+Basic Variables =  ['x3', 'x6', 'x8', 'x1']
+This is A martix
+[[ 0.  -2.   1.  -1.  -0.5]
+ [ 0.   5.  -2.   2.   1. ]
+ [-1.  11.  -5.   5.   3. ]
+ [ 0.  10.  -5.   5.   3. ]]
+This is Xb
+[0.5 5.  5.  7. ]
+This is zj-cj bottom row of table
+[1.000e+04 3.100e+01 9.992e+03 8.000e+00 3.000e+00]
+This is Cb (coefficients of basic variable
+[-18.   0.   0.  -2.]
+This is Cn (coefficients of non-basic variable
+[-10000.    -15. -10000.      0.      0.]
+So the optimal value of objective function is: 23.0
+The values for x are:
+['x1=7.000000000000001', 'x2=0.0', 'x3=0.5000000000000001', 'x4=0.0', 'x5=0.0', 'x6=5.0', 'x7=0.0', 'x8=5.000000000000001', 'x9=0.0']
+^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*
+Dual Simplex Iteration:  1
+------------------------------------------------------------
+Iteration  1
+Non Basic Variables =  ['x9', 'x2', 'x5', 'x4', 'x7']
+Basic Variables =  ['x3', 'x6', 'x8', 'x1', 'x10']
+This is A martix
+[[ 0.00000000e+00 -2.00000000e+00  1.00000000e+00 -1.00000000e+00
+  -5.00000000e-01]
+ [ 0.00000000e+00  5.00000000e+00 -2.00000000e+00  2.00000000e+00
+   1.00000000e+00]
+ [-1.00000000e+00  1.10000000e+01 -5.00000000e+00  5.00000000e+00
+   3.00000000e+00]
+ [ 0.00000000e+00  1.00000000e+01 -5.00000000e+00  5.00000000e+00
+   3.00000000e+00]
+ [ 0.00000000e+00 -1.00000000e+00 -2.22044605e-16 -1.00000000e+00
+  -5.00000000e-01]]
+This is Xb
+[ 0.5  5.   5.   7.  -0.5]
+This is zj-cj bottom row of table
+[1.000e+04 3.100e+01 9.992e+03 8.000e+00 3.000e+00]
+This is Cb (coefficients of basic variable
+[-18.   0.   0.  -2.   0.]
+This is Cn (coefficients of non-basic variable
+[-10000.    -15. -10000.      0.      0.]
+So the optimal value of objective function is: 23.0
+The values for x are:
+['x1=7.000000000000001', 'x2=0.0', 'x3=0.5000000000000001', 'x4=0.0', 'x5=0.0', 'x6=5.0', 'x7=0.0', 'x8=5.000000000000001', 'x9=0.0', 'x10=-0.5000000000000001']
+The value of most negative Xb is -0.5000000000000001  Corresponding to row 5
+The ratios are for corresponding row [-1.00000000e+04  3.10000000e+01  4.49999675e+19  8.00000000e+00
+  6.00000000e+00]
+The minimum ratio is: 6.0
+The pivot element is  -0.5  and corresponding coordinates(1 based indexing) is 5   5
+------------------------------------------------------------
+Iteration  2
+Non Basic Variables =  ['x9', 'x2', 'x5', 'x4', 'x10']
+Basic Variables =  ['x3', 'x6', 'x8', 'x1', 'x7']
+This is A martix
+[[-0. -1.  1. -0.  0.]
+ [ 0.  3. -2.  0.  0.]
+ [-1.  5. -5. -1.  0.]
+ [ 0.  4. -5. -1.  0.]
+ [-0.  2.  0.  2.  1.]]
+This is Xb
+[1. 4. 2. 4. 1.]
+This is zj-cj bottom row of table
+[1.000e+04 2.500e+01 9.992e+03 2.000e+00 0.000e+00]
+This is Cb (coefficients of basic variable
+[-18.   0.   0.  -2.   0.]
+This is Cn (coefficients of non-basic variable
+[-10000.    -15. -10000.      0.      0.]
+So the optimal value of objective function is: 26.0
+The values for x are:
+['x1=4.0', 'x2=0.0', 'x3=1.0', 'x4=0.0', 'x5=0.0', 'x6=4.0', 'x7=1.0', 'x8=2.0', 'x9=0.0', 'x10=0.0']
+------------------------------------------------------------
+The iterations have ended because no negative values of Xb are present
+This is the list of all the non-basic variables are  ['x9', 'x2', 'x5', 'x4', 'x10']
+This is the list of all basic variables are  ['x3', 'x6', 'x8', 'x1', 'x7']
+The values for x are:
+['x1=4.0', 'x2=0.0', 'x3=1.0', 'x4=0.0', 'x5=0.0', 'x6=4.0', 'x7=1.0', 'x8=2.0', 'x9=0.0', 'x10=0.0']
+So the Final value of objective function is: 26.0
+
+
+
+// Output 2
+The objective function to maximize is: 
+3.0x1 + 4.0x2 + 0.0
+
+The standard form of the constraints using slack/surplus variables is:
+3.0x1 + -1.0x2 + x3 = 12.0
+3.0x1 + 11.0x2 + x4 = 66.0
+[[ 3. -1.]
+ [ 3. 11.]]
+[0. 0.]
+[3. 4.]
+['x1', 'x2']
+['x3', 'x4']
+The objective function to maximize is
+--3.0x1 --4.0x2  +  0.0
+------------------------------------------------------------
+Iteration  1
+The value of Objective function in this iteration is  0.0
+The values for x are:
+['x1=0.0', 'x2=0.0', 'x3=12.0', 'x4=66.0']
+This is the list of all the basic variables are  ['x3', 'x4']
+This is the list of all non-basic variables are  ['x1', 'x2']
+The matrix form of A is
+[[ 3. -1.]
+ [ 3. 11.]]
+The value of Zj-Cj are
+[-3. -4.]
+The values of basic solutions X_b are
+[12. 66.]
+The value of most negative c is -4.0  Corresponding to column 2
+The ratios are for corresponding column [-12.   6.]
+The minimum ratio is: 6.0
+The pivot element is  11.0  and corresponding coordinates(1 based indexing) is 2   2
+------------------------------------------------------------
+Iteration  2
+The value of Objective function in this iteration is  24.0
+The values for x are:
+['x1=0.0', 'x2=6.0', 'x3=18.0', 'x4=0.0']
+This is the list of all the basic variables are  ['x3', 'x2']
+This is the list of all non-basic variables are  ['x1', 'x4']
+The matrix form of A is
+[[3.27272727 0.09090909]
+ [0.27272727 0.09090909]]
+The value of Zj-Cj are
+[-1.909091  0.363636]
+The values of basic solutions X_b are
+[18.  6.]
+The value of most negative c is -1.909091  Corresponding to column 1
+The ratios are for corresponding column [ 5.5 22. ]
+The minimum ratio is: 5.5
+The pivot element is  3.272727272727273  and corresponding coordinates(1 based indexing) is 1   1
+------------------------------------------------------------
+Iteration  3
+The value of Objective function in this iteration is  34.5
+The values for x are:
+['x1=5.5', 'x2=4.5', 'x3=0.0', 'x4=0.0']
+This is the list of all the basic variables are  ['x1', 'x2']
+This is the list of all non-basic variables are  ['x3', 'x4']
+The matrix form of A is
+[[ 0.30555556  0.02777778]
+ [-0.08333333  0.08333333]]
+The value of Zj-Cj are
+[0.583333 0.416666]
+The values of basic solutions X_b are
+[5.5 4.5]
+------------------------------------------------------------
+The iterations have ended
+This is the list of all the basic variables are  ['x3', 'x4']
+This is the list of all non-basic variables are  ['x1', 'x2']
+The values for x are:
+['x1=5.5', 'x2=4.5', 'x3=0.0', 'x4=0.0']
+So the Final value of objective function is: 34.5
+Non Basic Variables =  ['x3', 'x4']
+Basic Variables =  ['x1', 'x2']
+This is A martix
+[[ 0.30555556  0.02777778]
+ [-0.08333333  0.08333333]]
+This is Xb
+[5.5 4.5]
+This is zj-cj bottom row of table
+[0.583333 0.416666]
+This is Cb (coefficients of basic variable
+[3. 4.]
+This is Cn (coefficients of non-basic variable
+[0. 0.]
+So the optimal value of objective function is: 34.5
+The values for x are:
+['x1=5.5', 'x2=4.5', 'x3=0.0', 'x4=0.0']
+^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*
+Dual Simplex Iteration:  1
+------------------------------------------------------------
+Iteration  1
+Non Basic Variables =  ['x3', 'x4']
+Basic Variables =  ['x1', 'x2', 'x5']
+This is A martix
+[[ 0.30555556  0.02777778]
+ [-0.08333333  0.08333333]
+ [-0.30555556 -0.02777778]]
+This is Xb
+[ 5.5  4.5 -0.5]
+This is zj-cj bottom row of table
+[0.583333 0.416666]
+This is Cb (coefficients of basic variable
+[3. 4. 0.]
+This is Cn (coefficients of non-basic variable
+[0. 0.]
+So the optimal value of objective function is: 34.5
+The values for x are:
+['x1=5.5', 'x2=4.5', 'x3=0.0', 'x4=0.0', 'x5=-0.5']
+The value of most negative Xb is -0.5  Corresponding to row 3
+The ratios are for corresponding row [ 1.90908982 14.999976  ]
+The minimum ratio is: 1.9090898181818183
+The pivot element is  -0.3055555555555555  and corresponding coordinates(1 based indexing) is 3   1
+------------------------------------------------------------
+Iteration  2
+Non Basic Variables =  ['x5', 'x4']
+Basic Variables =  ['x1', 'x2', 'x3']
+This is A martix
+[[ 0.       -0.      ]
+ [ 0.        0.090909]
+ [ 1.        0.090909]]
+This is Xb
+[5.       4.636364 2.      ]
+This is zj-cj bottom row of table
+[0.       0.363636]
+This is Cb (coefficients of basic variable
+[3. 4. 0.]
+This is Cn (coefficients of non-basic variable
+[0. 0.]
+So the optimal value of objective function is: 33.54546
+The values for x are:
+['x1=5.0', 'x2=4.636364', 'x3=2.0', 'x4=0.0', 'x5=0.0']
+------------------------------------------------------------
+The iterations have ended because no negative values of Xb are present
+This is the list of all the non-basic variables are  ['x5', 'x4']
+This is the list of all basic variables are  ['x1', 'x2', 'x3']
+The values for x are:
+['x1=5.0', 'x2=4.636364', 'x3=2.0', 'x4=0.0', 'x5=0.0']
+So the Final value of objective function is: 33.54546
+^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*
+Dual Simplex Iteration:  2
+------------------------------------------------------------
+Iteration  1
+Non Basic Variables =  ['x5', 'x4']
+Basic Variables =  ['x1', 'x2', 'x3', 'x6']
+This is A martix
+[[ 0.       -0.      ]
+ [ 0.        0.090909]
+ [ 1.        0.090909]
+ [ 0.       -0.090909]]
+This is Xb
+[ 5.        4.636364  2.       -0.636364]
+This is zj-cj bottom row of table
+[0.       0.363636]
+This is Cb (coefficients of basic variable
+[3. 4. 0. 0.]
+This is Cn (coefficients of non-basic variable
+[0. 0.]
+So the optimal value of objective function is: 33.54546
+The values for x are:
+['x1=5.0', 'x2=4.636364', 'x3=2.0', 'x4=0.0', 'x5=0.0', 'x6=-0.6363640000000004']
+The value of most negative Xb is -0.6363640000000004  Corresponding to row 4
+The ratios are for corresponding row [0. 4.]
+The minimum ratio is: 4.0
+The pivot element is  -0.090909  and corresponding coordinates(1 based indexing) is 4   2
+------------------------------------------------------------
+Iteration  2
+Non Basic Variables =  ['x5', 'x6']
+Basic Variables =  ['x1', 'x2', 'x3', 'x4']
+This is A martix
+[[-0.  0.]
+ [ 0.  0.]
+ [ 1.  0.]
+ [-0.  1.]]
+This is Xb
+[5.       4.       1.363636 7.      ]
+This is zj-cj bottom row of table
+[0. 0.]
+This is Cb (coefficients of basic variable
+[3. 4. 0. 0.]
+This is Cn (coefficients of non-basic variable
+[0. 0.]
+So the optimal value of objective function is: 31.0
+The values for x are:
+['x1=5.0', 'x2=4.0', 'x3=1.363636', 'x4=7.0', 'x5=0.0', 'x6=0.0']
+------------------------------------------------------------
+The iterations have ended because no negative values of Xb are present
+This is the list of all the non-basic variables are  ['x5', 'x6']
+This is the list of all basic variables are  ['x1', 'x2', 'x3', 'x4']
+The values for x are:
+['x1=5.0', 'x2=4.0', 'x3=1.363636', 'x4=7.0', 'x5=0.0', 'x6=0.0']
+So the Final value of objective function is: 31.0
+
+//Output-3
+
+The objective function to maximize is: 
+1.0x1 + 1.0x2 + 0.0
+
+The standard form of the constraints using slack/surplus variables is:
+0.0x1 + 2.0x2 + x3 = 7.0
+1.0x1 + 1.0x2 + x4 = 7.0
+2.0x1 + 0.0x2 + x5 = 11.0
+[[0. 2.]
+ [1. 1.]
+ [2. 0.]]
+[0. 0. 0.]
+[1. 1.]
+['x1', 'x2']
+['x3', 'x4', 'x5']
+The objective function to maximize is
+--1.0x1 --1.0x2  +  0.0
+------------------------------------------------------------
+Iteration  1
+The value of Objective function in this iteration is  0.0
+The values for x are:
+['x1=0.0', 'x2=0.0', 'x3=7.0', 'x4=7.0', 'x5=11.0']
+This is the list of all the basic variables are  ['x3', 'x4', 'x5']
+This is the list of all non-basic variables are  ['x1', 'x2']
+The matrix form of A is
+[[0. 2.]
+ [1. 1.]
+ [2. 0.]]
+The value of Zj-Cj are
+[-1. -1.]
+The values of basic solutions X_b are
+[ 7.  7. 11.]
+The value of most negative c is -1.0  Corresponding to column 1
+The ratios are for corresponding column [0.  7.  5.5]
+The minimum ratio is: 5.5
+The pivot element is  2.0  and corresponding coordinates(1 based indexing) is 3   1
+------------------------------------------------------------
+Iteration  2
+The value of Objective function in this iteration is  5.5
+The values for x are:
+['x1=5.5', 'x2=0.0', 'x3=7.0', 'x4=1.5', 'x5=0.0']
+This is the list of all the basic variables are  ['x3', 'x4', 'x1']
+This is the list of all non-basic variables are  ['x5', 'x2']
+The matrix form of A is
+[[-0.   2. ]
+ [-0.5  1. ]
+ [ 0.5  0. ]]
+The value of Zj-Cj are
+[ 0.5 -1. ]
+The values of basic solutions X_b are
+[7.  1.5 5.5]
+The value of most negative c is -1.0  Corresponding to column 2
+The ratios are for corresponding column [3.5 1.5 0. ]
+The minimum ratio is: 1.5
+The pivot element is  1.0  and corresponding coordinates(1 based indexing) is 2   2
+------------------------------------------------------------
+Iteration  3
+The value of Objective function in this iteration is  7.0
+The values for x are:
+['x1=5.5', 'x2=1.5', 'x3=4.0', 'x4=0.0', 'x5=0.0']
+This is the list of all the basic variables are  ['x3', 'x2', 'x1']
+This is the list of all non-basic variables are  ['x5', 'x4']
+The matrix form of A is
+[[ 1.  -2. ]
+ [-0.5  1. ]
+ [ 0.5 -0. ]]
+The value of Zj-Cj are
+[0. 1.]
+The values of basic solutions X_b are
+[4.  1.5 5.5]
+------------------------------------------------------------
+The iterations have ended
+This is the list of all the basic variables are  ['x5', 'x4']
+This is the list of all non-basic variables are  ['x3', 'x2', 'x1']
+The values for x are:
+['x1=5.5', 'x2=1.5', 'x3=4.0', 'x4=0.0', 'x5=0.0']
+So the Final value of objective function is: 7.0
+Non Basic Variables =  ['x5', 'x4']
+Basic Variables =  ['x3', 'x2', 'x1']
+This is A martix
+[[ 1.  -2. ]
+ [-0.5  1. ]
+ [ 0.5 -0. ]]
+This is Xb
+[4.  1.5 5.5]
+This is zj-cj bottom row of table
+[0. 1.]
+This is Cb (coefficients of basic variable
+[0. 1. 1.]
+This is Cn (coefficients of non-basic variable
+[0. 0.]
+So the optimal value of objective function is: 7.0
+The values for x are:
+['x1=5.5', 'x2=1.5', 'x3=4.0', 'x4=0.0', 'x5=0.0']
+^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*
+Dual Simplex Iteration:  1
+------------------------------------------------------------
+Iteration  1
+Non Basic Variables =  ['x5', 'x4']
+Basic Variables =  ['x3', 'x2', 'x1', 'x6']
+This is A martix
+[[ 1.  -2. ]
+ [-0.5  1. ]
+ [ 0.5 -0. ]
+ [-0.5 -0. ]]
+This is Xb
+[ 4.   1.5  5.5 -0.5]
+This is zj-cj bottom row of table
+[0. 1.]
+This is Cb (coefficients of basic variable
+[0. 1. 1. 0.]
+This is Cn (coefficients of non-basic variable
+[0. 0.]
+So the optimal value of objective function is: 7.0
+The values for x are:
+['x1=5.5', 'x2=1.5', 'x3=4.0', 'x4=0.0', 'x5=0.0', 'x6=-0.5']
+The value of most negative Xb is -0.5  Corresponding to row 4
+The ratios are for corresponding row [0. 0.]
+The minimum ratio is: 0.0
+The pivot element is  -0.5  and corresponding coordinates(1 based indexing) is 4   1
+------------------------------------------------------------
+Iteration  2
+Non Basic Variables =  ['x6', 'x4']
+Basic Variables =  ['x3', 'x2', 'x1', 'x5']
+This is A martix
+[[ 0. -2.]
+ [ 0.  1.]
+ [ 0. -0.]
+ [ 1.  0.]]
+This is Xb
+[3. 2. 5. 1.]
+This is zj-cj bottom row of table
+[0. 1.]
+This is Cb (coefficients of basic variable
+[0. 1. 1. 0.]
+This is Cn (coefficients of non-basic variable
+[0. 0.]
+So the optimal value of objective function is: 7.0
+The values for x are:
+['x1=5.0', 'x2=2.0', 'x3=3.0', 'x4=0.0', 'x5=1.0', 'x6=0.0']
+------------------------------------------------------------
+The iterations have ended because no negative values of Xb are present
+This is the list of all the non-basic variables are  ['x6', 'x4']
+This is the list of all basic variables are  ['x3', 'x2', 'x1', 'x5']
+The values for x are:
+['x1=5.0', 'x2=2.0', 'x3=3.0', 'x4=0.0', 'x5=1.0', 'x6=0.0']
+So the Final value of objective function is: 7.0
+
+//Output 4
+
+The objective function to maximize is: 
+7.0x1 + 9.0x2 + 0.0
+
+The standard form of the constraints using slack/surplus variables is:
+-1.0x1 + 3.0x2 + x3 = 6.0
+7.0x1 + 1.0x2 + x4 = 35.0
+[[-1.  3.]
+ [ 7.  1.]]
+[0. 0.]
+[7. 9.]
+['x1', 'x2']
+['x3', 'x4']
+The objective function to maximize is
+--7.0x1 --9.0x2  +  0.0
+------------------------------------------------------------
+Iteration  1
+The value of Objective function in this iteration is  0.0
+The values for x are:
+['x1=0.0', 'x2=0.0', 'x3=6.0', 'x4=35.0']
+This is the list of all the basic variables are  ['x3', 'x4']
+This is the list of all non-basic variables are  ['x1', 'x2']
+The matrix form of A is
+[[-1.  3.]
+ [ 7.  1.]]
+The value of Zj-Cj are
+[-7. -9.]
+The values of basic solutions X_b are
+[ 6. 35.]
+The value of most negative c is -9.0  Corresponding to column 2
+The ratios are for corresponding column [ 2. 35.]
+The minimum ratio is: 2.0
+The pivot element is  3.0  and corresponding coordinates(1 based indexing) is 1   2
+------------------------------------------------------------
+Iteration  2
+The value of Objective function in this iteration is  18.0
+The values for x are:
+['x1=0.0', 'x2=2.0', 'x3=0.0', 'x4=33.0']
+This is the list of all the basic variables are  ['x2', 'x4']
+This is the list of all non-basic variables are  ['x1', 'x3']
+The matrix form of A is
+[[-0.33333333  0.33333333]
+ [ 7.33333333 -0.33333333]]
+The value of Zj-Cj are
+[-10.   3.]
+The values of basic solutions X_b are
+[ 2. 33.]
+The value of most negative c is -10.0  Corresponding to column 1
+The ratios are for corresponding column [-6.   4.5]
+The minimum ratio is: 4.5
+The pivot element is  7.333333333333333  and corresponding coordinates(1 based indexing) is 2   1
+------------------------------------------------------------
+Iteration  3
+The value of Objective function in this iteration is  63.0
+The values for x are:
+['x1=4.5', 'x2=3.5', 'x3=0.0', 'x4=0.0']
+This is the list of all the basic variables are  ['x2', 'x1']
+This is the list of all non-basic variables are  ['x4', 'x3']
+The matrix form of A is
+[[ 0.04545455  0.31818182]
+ [ 0.13636364 -0.04545455]]
+The value of Zj-Cj are
+[1.363636 2.545455]
+The values of basic solutions X_b are
+[3.5 4.5]
+------------------------------------------------------------
+The iterations have ended
+This is the list of all the basic variables are  ['x4', 'x3']
+This is the list of all non-basic variables are  ['x2', 'x1']
+The values for x are:
+['x1=4.5', 'x2=3.5', 'x3=0.0', 'x4=0.0']
+So the Final value of objective function is: 63.0
+Non Basic Variables =  ['x4', 'x3']
+Basic Variables =  ['x2', 'x1']
+This is A martix
+[[ 0.04545455  0.31818182]
+ [ 0.13636364 -0.04545455]]
+This is Xb
+[3.5 4.5]
+This is zj-cj bottom row of table
+[1.363636 2.545455]
+This is Cb (coefficients of basic variable
+[9. 7.]
+This is Cn (coefficients of non-basic variable
+[0. 0.]
+So the optimal value of objective function is: 63.0
+The values for x are:
+['x1=4.5', 'x2=3.5', 'x3=0.0', 'x4=0.0']
+^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*
+Dual Simplex Iteration:  1
+------------------------------------------------------------
+Iteration  1
+Non Basic Variables =  ['x4', 'x3']
+Basic Variables =  ['x2', 'x1', 'x5']
+This is A martix
+[[ 0.04545455  0.31818182]
+ [ 0.13636364 -0.04545455]
+ [-0.04545455 -0.31818182]]
+This is Xb
+[ 3.5  4.5 -0.5]
+This is zj-cj bottom row of table
+[1.363636 2.545455]
+This is Cb (coefficients of basic variable
+[9. 7. 0.]
+This is Cn (coefficients of non-basic variable
+[0. 0.]
+So the optimal value of objective function is: 63.0
+The values for x are:
+['x1=4.5', 'x2=3.5', 'x3=0.0', 'x4=0.0', 'x5=-0.5']
+The value of most negative Xb is -0.5  Corresponding to row 3
+The ratios are for corresponding row [29.999992    8.00000143]
+The minimum ratio is: 8.000001428571428
+The pivot element is  -0.3181818181818182  and corresponding coordinates(1 based indexing) is 3   2
+------------------------------------------------------------
+Iteration  2
+Non Basic Variables =  ['x4', 'x5']
+Basic Variables =  ['x2', 'x1', 'x3']
+This is A martix
+[[-0.        0.      ]
+ [ 0.142857  0.      ]
+ [ 0.142857  1.      ]]
+This is Xb
+[3.       4.571429 2.      ]
+This is zj-cj bottom row of table
+[1. 0.]
+This is Cb (coefficients of basic variable
+[9. 7. 0.]
+This is Cn (coefficients of non-basic variable
+[0. 0.]
+So the optimal value of objective function is: 59.0
+The values for x are:
+['x1=4.571429', 'x2=3.0', 'x3=2.0', 'x4=0.0', 'x5=0.0']
+------------------------------------------------------------
+The iterations have ended because no negative values of Xb are present
+This is the list of all the non-basic variables are  ['x4', 'x5']
+This is the list of all basic variables are  ['x2', 'x1', 'x3']
+The values for x are:
+['x1=4.571429', 'x2=3.0', 'x3=2.0', 'x4=0.0', 'x5=0.0']
+So the Final value of objective function is: 59.0
+^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*^*
+Dual Simplex Iteration:  2
+------------------------------------------------------------
+Iteration  1
+Non Basic Variables =  ['x4', 'x5']
+Basic Variables =  ['x2', 'x1', 'x3', 'x6']
+This is A martix
+[[-0.        0.      ]
+ [ 0.142857  0.      ]
+ [ 0.142857  1.      ]
+ [-0.142857  0.      ]]
+This is Xb
+[ 3.        4.571429  2.       -0.571429]
+This is zj-cj bottom row of table
+[1. 0.]
+This is Cb (coefficients of basic variable
+[9. 7. 0. 0.]
+This is Cn (coefficients of non-basic variable
+[0. 0.]
+So the optimal value of objective function is: 59.0
+The values for x are:
+['x1=4.571429', 'x2=3.0', 'x3=2.0', 'x4=0.0', 'x5=0.0', 'x6=-0.5714290000000002']
+The value of most negative Xb is -0.5714290000000002  Corresponding to row 4
+The ratios are for corresponding row [7.000007 0.      ]
+The minimum ratio is: 7.000007000007
+The pivot element is  -0.142857  and corresponding coordinates(1 based indexing) is 4   1
+------------------------------------------------------------
+Iteration  2
+Non Basic Variables =  ['x6', 'x5']
+Basic Variables =  ['x2', 'x1', 'x3', 'x4']
+This is A martix
+[[ 0. -0.]
+ [ 0.  0.]
+ [ 0.  1.]
+ [ 1. -0.]]
+This is Xb
+[3.       4.       1.428571 4.      ]
+This is zj-cj bottom row of table
+[0. 0.]
+This is Cb (coefficients of basic variable
+[9. 7. 0. 0.]
+This is Cn (coefficients of non-basic variable
+[0. 0.]
+So the optimal value of objective function is: 55.0
+The values for x are:
+['x1=4.0', 'x2=3.0', 'x3=1.428571', 'x4=4.0', 'x5=0.0', 'x6=0.0']
+------------------------------------------------------------
+The iterations have ended because no negative values of Xb are present
+This is the list of all the non-basic variables are  ['x6', 'x5']
+This is the list of all basic variables are  ['x2', 'x1', 'x3', 'x4']
+The values for x are:
+['x1=4.0', 'x2=3.0', 'x3=1.428571', 'x4=4.0', 'x5=0.0', 'x6=0.0']
+So the Final value of objective function is: 55.0

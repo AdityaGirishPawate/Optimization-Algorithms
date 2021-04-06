@@ -1,0 +1,148 @@
+// Output 1
+step 1: row reduction
+The minimum elements are
+[[7.]
+ [2.]
+ [1.]
+ [2.]]
+The matrix after row reduction is:
+[[1. 0. 2. 2.]
+ [3. 0. 5. 6.]
+ [5. 0. 3. 8.]
+ [0. 1. 0. 4.]]
+step 2: col reduction
+The minimum elements are
+[[0. 0. 0. 2.]]
+The matrix after column reduction is:
+[[1. 0. 2. 0.]
+ [3. 0. 5. 4.]
+ [5. 0. 3. 6.]
+ [0. 1. 0. 2.]]
+Optimal Assignment is/are
+Solution 1
+[('Worker:0', 'Job:3'), ('Worker:1', 'Job:0'), ('Worker:2', 'Job:1'), ('Worker:3', 'Job:2')]
+Solution 2
+[('Worker:0', 'Job:3'), ('Worker:1', 'Job:1'), ('Worker:2', 'Job:2'), ('Worker:3', 'Job:0')]
+The worker 1 and the Job  4
+Cost for  this assignment is: 9.0
+The worker 2 and the Job  1
+Cost for  this assignment is: 5.0
+The worker 3 and the Job  2
+Cost for  this assignment is: 1.0
+The worker 4 and the Job  3
+Cost for  this assignment is: 2.0
+The total Minimum cost for assignment is 17.0
+
+//Output 2
+step 1: row reduction
+The minimum elements are
+[[ 6.]
+ [ 1.]
+ [25.]
+ [23.]
+ [ 0.]]
+The matrix after row reduction is:
+[[79. 87. 18.  0.  4.]
+ [69. 56. 19.  0. 18.]
+ [40. 12.  0. 64. 52.]
+ [45. 74.  0. 61. 15.]
+ [ 0.  0.  0.  0.  0.]]
+step 2: col reduction
+The minimum elements are
+[[0. 0. 0. 0. 0.]]
+The matrix after column reduction is:
+[[79. 87. 18.  0.  4.]
+ [69. 56. 19.  0. 18.]
+ [40. 12.  0. 64. 52.]
+ [45. 74.  0. 61. 15.]
+ [ 0.  0.  0.  0.  0.]]
+Optimal Assignment is/are
+Solution 1
+[('Worker:0', 'Job:4'), ('Worker:1', 'Job:3'), ('Worker:2', 'Job:1'), ('Worker:3', 'Job:2'), ('Worker:4', 'Job:0')]
+The worker 1 and the Job  5
+Cost for  this assignment is: 10.0
+The worker 2 and the Job  4
+Cost for  this assignment is: 1.0
+The worker 3 and the Job  2
+Cost for  this assignment is: 37.0
+The worker 4 and the Job  3
+Cost for  this assignment is: 23.0
+The worker 5 and the Job  1
+Cost for  this assignment is: 0
+The total Minimum cost for assignment is 71.0
+
+//Output 3
+step 1: row reduction
+The minimum elements are
+[[0.]
+ [0.]
+ [0.]
+ [0.]
+ [0.]]
+The matrix after row reduction is:
+[[57. 97. 56. 43.  0.]
+ [33. 59. 63. 97.  0.]
+ [22. 22. 33. 11.  0.]
+ [31. 45. 84. 71.  0.]
+ [98.  7. 90. 96.  0.]]
+step 2: col reduction
+The minimum elements are
+[[22.  7. 33. 11.  0.]]
+The matrix after column reduction is:
+[[35. 90. 23. 32.  0.]
+ [11. 52. 30. 86.  0.]
+ [ 0. 15.  0.  0.  0.]
+ [ 9. 38. 51. 60.  0.]
+ [76.  0. 57. 85.  0.]]
+Optimal Assignment is/are
+Solution 1
+[('Worker:0', 'Job:2'), ('Worker:1', 'Job:4'), ('Worker:2', 'Job:3'), ('Worker:3', 'Job:0'), ('Worker:4', 'Job:1')]
+The worker 1 and the Job  3
+Cost for  this assignment is: 56.0
+The worker 2 and the Job  5
+Cost for  this assignment is: 0
+The worker 3 and the Job  4
+Cost for  this assignment is: 11.0
+The worker 4 and the Job  1
+Cost for  this assignment is: 31.0
+The worker 5 and the Job  2
+Cost for  this assignment is: 7.0
+The total Minimum cost for assignment is 105.0
+
+//Output 4
+step 1: row reduction
+The minimum elements are
+[[ 1.]
+ [85.]
+ [19.]
+ [14.]
+ [42.]]
+The matrix after row reduction is:
+[[14. 17.  0. 39. 92.]
+ [ 1.  1.  0.  1.  1.]
+ [ 0.  0. 60. 35. 59.]
+ [42. 66. 21. 13.  0.]
+ [12. 11.  5. 57.  0.]]
+step 2: col reduction
+The minimum elements are
+[[0. 0. 0. 1. 0.]]
+The matrix after column reduction is:
+[[14. 17.  0. 38. 92.]
+ [ 1.  1.  0.  0.  1.]
+ [ 0.  0. 60. 34. 59.]
+ [42. 66. 21. 12.  0.]
+ [12. 11.  5. 56.  0.]]
+Optimal Assignment is/are
+Solution 1
+[('Worker:0', 'Job:2'), ('Worker:1', 'Job:3'), ('Worker:2', 'Job:0'), ('Worker:3', 'Job:4'), ('Worker:4', 'Job:1')]
+The worker 1 and the Job  3
+Cost for  this assignment is: 1.0
+The worker 2 and the Job  4
+Cost for  this assignment is: 86.0
+The worker 3 and the Job  1
+Cost for  this assignment is: 19.0
+The worker 4 and the Job  5
+Cost for  this assignment is: 14.0
+The worker 5 and the Job  2
+Cost for  this assignment is: 53.0
+The total Minimum cost for assignment is 173.0

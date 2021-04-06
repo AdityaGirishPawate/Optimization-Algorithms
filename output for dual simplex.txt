@@ -1,0 +1,532 @@
+
+Output for question 1:
+
+The objective function to maximize is
+--20.0x1 --16.0x2  +  0.0
+-1.0x1 + -0.0x2 + x3 = -2.5
+-0.0x1 + -1.0x2 + x4 = -6.0
+-2.0x1 + -1.0x2 + x5 = -17.0
+-1.0x1 + -1.0x2 + x6 = -12.0
+------------------------------------------------------------
+Iteration  1
+Non Basic Variables =  ['x1=0.0', 'x2=0.0']
+Basic Variables =  ['x3=-2.5', 'x4=-6.0', 'x5=-17.0', 'x6=-12.0']
+This is A martix
+[[-1. -0.  1.  0.  0.  0.]
+ [-0. -1.  0.  1.  0.  0.]
+ [-2. -1.  0.  0.  1.  0.]
+ [-1. -1.  0.  0.  0.  1.]]
+This is Xb
+[ -2.5  -6.  -17.  -12. ]
+This is c bottom row of table
+[-20. -16.  -0.  -0.  -0.  -0.]
+This is Cb (coefficients of basic variable
+[0. 0. 0. 0.]
+This is Cn (coefficients of non-basic variable
+[-20. -16.   0.   0.   0.   0.]
+So the optimal value of objective function is: 0.0
+The value of most negative Xb is -17.0  Corresponding to row 3
+The ratios are for corresponding row [10. 16.  0.  0.  0.  0.]
+The minimum ratio is: 10.0
+The pivot element is  -2.0  and corresponding coordinates(1 based indexing) is 3   1
+------------------------------------------------------------
+Iteration  2
+Non Basic Variables =  ['x1=0.0', 'x2=0.0', 'x5=0.0']
+Basic Variables =  ['x3=6.0', 'x4=-6.0', 'x1=0.0', 'x6=-3.5']
+This is A martix
+[[ 0.   0.5  1.  -0.  -0.5 -0. ]
+ [ 0.  -1.  -0.   1.  -0.  -0. ]
+ [ 1.   0.5 -0.  -0.  -0.5 -0. ]
+ [ 0.  -0.5 -0.  -0.  -0.5  1. ]]
+This is Xb
+[ 6.  -6.   8.5 -3.5]
+This is c bottom row of table
+[ -0.  -6.  -0.  -0. -10.  -0.]
+This is Cb (coefficients of basic variable
+[  0.   0. -20.   0.]
+This is Cn (coefficients of non-basic variable
+[  0. -16.   0.   0.   0.   0.]
+So the optimal value of objective function is: 170.0
+The value of most negative Xb is -6.0  Corresponding to row 2
+The ratios are for corresponding row [0. 6. 0. 0. 0. 0.]
+The minimum ratio is: 6.0
+The pivot element is  -1.0  and corresponding coordinates(1 based indexing) is 2   2
+------------------------------------------------------------
+Iteration  3
+Non Basic Variables =  ['x1=0.0', 'x2=0.0', 'x5=0.0', 'x4=0.0']
+Basic Variables =  ['x3=3.0', 'x2=0.0', 'x1=0.0', 'x6=-0.5']
+This is A martix
+[[ 0.   0.   1.   0.5 -0.5 -0. ]
+ [-0.   1.   0.  -1.   0.   0. ]
+ [ 1.   0.  -0.   0.5 -0.5 -0. ]
+ [-0.   0.  -0.  -0.5 -0.5  1. ]]
+This is Xb
+[ 3.   6.   5.5 -0.5]
+This is c bottom row of table
+[ -0.  -0.   0.  -6. -10.   0.]
+This is Cb (coefficients of basic variable
+[  0. -16. -20.   0.]
+This is Cn (coefficients of non-basic variable
+[0. 0. 0. 0. 0. 0.]
+So the optimal value of objective function is: 206.0
+The value of most negative Xb is -0.5  Corresponding to row 4
+The ratios are for corresponding row [ 0.  0.  0. 12. 20.  0.]
+The minimum ratio is: 12.0
+The pivot element is  -0.5  and corresponding coordinates(1 based indexing) is 4   4
+------------------------------------------------------------
+Iteration  4
+Non Basic Variables =  ['x1=0.0', 'x2=0.0', 'x5=0.0', 'x4=0.0', 'x6=0.0']
+Basic Variables =  ['x3=2.5', 'x2=0.0', 'x1=0.0', 'x4=0.0']
+This is A martix
+[[-0.  0.  1.  0. -1.  1.]
+ [-0.  1.  0.  0.  1. -2.]
+ [ 1.  0. -0.  0. -1.  1.]
+ [ 0. -0.  0.  1.  1. -2.]]
+This is Xb
+[2.5 7.  5.  1. ]
+This is c bottom row of table
+[  0.  -0.   0.  -0.  -4. -12.]
+This is Cb (coefficients of basic variable
+[  0. -16. -20.   0.]
+This is Cn (coefficients of non-basic variable
+[0. 0. 0. 0. 0. 0.]
+So the optimal value of objective function is: 212.0
+------------------------------------------------------------
+The iterations have ended
+This is the list of all the non-basic variables are  ['x1', 'x2', 'x5', 'x4', 'x6']
+This is the list of all basic variables are  ['x3', 'x2', 'x1', 'x4']
+The values for x are:
+['x1=0.0', 'x2=0.0', 'x3=2.5', 'x4=0.0', 'x5=0.0', 'x6=0.0']
+So the Final value of objective function is: 212.0
+
+Output for question 2:
+
+The objective function to maximize is
+--4.0x1 --8.0x2 --3.0x3  +  0.0
+-1.0x1 + -1.0x2 + -0.0x3 + x4 = -2.0
+2.0x1 + 0.0x2 + 1.0x3 + x5 = 5.0
+------------------------------------------------------------
+Iteration  1
+Non Basic Variables =  ['x1', 'x2', 'x3']
+Basic Variables =  ['x4', 'x5']
+This is A martix
+[[-1. -1. -0.  1.  0.]
+ [ 2.  0.  1.  0.  1.]]
+This is Xb
+[-2.  5.]
+This is c bottom row of table
+[-4. -8. -3. -0. -0.]
+This is Cb (coefficients of basic variable
+[0. 0.]
+This is Cn (coefficients of non-basic variable
+[-4. -8. -3.  0.  0.]
+So the optimal value of objective function is: 0.0
+The value of most negative Xb is -2.0  Corresponding to row 1
+The ratios are for corresponding row [ 4.  8. -3.  0.  0.]
+The minimum ratio is: 4.0
+The pivot element is  -1.0  and corresponding coordinates(1 based indexing) is 1   1
+------------------------------------------------------------
+Iteration  2
+Non Basic Variables =  ['x1', 'x2', 'x3', 'x4']
+Basic Variables =  ['x1', 'x5']
+This is A martix
+[[ 1.  1.  0. -1. -0.]
+ [ 0. -2.  1.  2.  1.]]
+This is Xb
+[2. 1.]
+This is c bottom row of table
+[-0. -4. -3. -4. -0.]
+This is Cb (coefficients of basic variable
+[-4.  0.]
+This is Cn (coefficients of non-basic variable
+[ 0. -8. -3.  0.  0.]
+So the optimal value of objective function is: 8.0
+------------------------------------------------------------
+The iterations have ended
+This is the list of all the non-basic variables are  ['x1', 'x2', 'x3', 'x4']
+This is the list of all basic variables are  ['x1', 'x5']
+The values for x are:
+['x1', 'x2', 'x3', 'x4', 'x5']
+So the Final value of objective function is: 8.0
+
+Process finished with exit code 0
+
+Output for question 3:
+
+The objective function to maximize is
+-15.0x1 -6.0x2 -9.0x3 -2.0x4  +  0.0
+10.0x1 + 5.0x2 + 25.0x3 + 3.0x4 + x5 = 50.0
+12.0x1 + 4.0x2 + 12.0x3 + 1.0x4 + x6 = 48.0
+7.0x1 + 0.0x2 + 0.0x3 + 1.0x4 + x7 = 35.0
+------------------------------------------------------------
+Iteration  1
+Non Basic Variables =  ['x1', 'x2', 'x3', 'x4']
+Basic Variables =  ['x5', 'x6', 'x7']
+This is A martix
+[[10.  5. 25.  3.  1.  0.  0.]
+ [12.  4. 12.  1.  0.  1.  0.]
+ [ 7.  0.  0.  1.  0.  0.  1.]]
+This is Xb
+[50. 48. 35.]
+This is c bottom row of table
+[15.  6.  9.  2. -0. -0. -0.]
+This is Cb (coefficients of basic variable
+[0. 0. 0.]
+This is Cn (coefficients of non-basic variable
+[15.  6.  9.  2.  0.  0.  0.]
+So the optimal value of objective function is: 0.0
+------------------------------------------------------------
+The iterations have ended because no negative values of Xb are present
+This is the list of all the non-basic variables are  ['x1', 'x2', 'x3', 'x4']
+This is the list of all basic variables are  ['x5', 'x6', 'x7']
+The values for x are:
+['x1', 'x2', 'x3', 'x4', 'x5', 'x6', 'x7']
+So the Final value of objective function is: 0.0
+
+Process finished with exit code 0
+
+Output for question 4:
+
+
+The objective function to maximize is
+-5.0x1 --2.0x2 -3.0x3  +  0.0
+-2.0x1 + -2.0x2 + 1.0x3 + x4 = -2.0
+3.0x1 + -4.0x2 + 0.0x3 + x5 = 3.0
+0.0x1 + 1.0x2 + 3.0x3 + x6 = 3.0
+------------------------------------------------------------
+Iteration  1
+Non Basic Variables =  ['x1', 'x2', 'x3']
+Basic Variables =  ['x4', 'x5', 'x6']
+This is A martix
+[[-2. -2.  1.  1.  0.  0.]
+ [ 3. -4.  0.  0.  1.  0.]
+ [ 0.  1.  3.  0.  0.  1.]]
+This is Xb
+[-2.  3.  3.]
+This is c bottom row of table
+[ 5. -2.  3. -0. -0. -0.]
+This is Cb (coefficients of basic variable
+[0. 0. 0.]
+This is Cn (coefficients of non-basic variable
+[ 5. -2.  3.  0.  0.  0.]
+So the optimal value of objective function is: 0.0
+The value of most negative Xb is -2.0  Corresponding to row 1
+The ratios are for corresponding row [2.5 1.  3.  0.  0.  0. ]
+The minimum ratio is: 1.0
+The pivot element is  -2.0  and corresponding coordinates(1 based indexing) is 1   2
+------------------------------------------------------------
+Iteration  2
+Non Basic Variables =  ['x1', 'x2', 'x3', 'x4']
+Basic Variables =  ['x2', 'x5', 'x6']
+This is A martix
+[[ 1.   1.  -0.5 -0.5 -0.  -0. ]
+ [ 7.   0.  -2.  -2.   1.  -0. ]
+ [-1.   0.   3.5  0.5  0.   1. ]]
+This is Xb
+[1. 7. 2.]
+This is c bottom row of table
+[ 7. -0.  2. -1. -0. -0.]
+This is Cb (coefficients of basic variable
+[-2.  0.  0.]
+This is Cn (coefficients of non-basic variable
+[5. 0. 3. 0. 0. 0.]
+So the optimal value of objective function is: -2.0
+------------------------------------------------------------
+The iterations have ended because no negative values of Xb are present
+This is the list of all the non-basic variables are  ['x1', 'x2', 'x3', 'x4']
+This is the list of all basic variables are  ['x2', 'x5', 'x6']
+The values for x are:
+['x1', 'x2', 'x3', 'x4', 'x5', 'x6']
+So the Final value of objective function is: -2.0
+
+Output for question 5:
+The objective function to maximize is
+-2.0x1 -3.0x2 -1.0x3  +  0.0
+1.0x1 + 1.0x2 + 1.0x3 + x4 = 40.0
+-2.0x1 + -1.0x2 + 1.0x3 + x5 = -10.0
+-0.0x1 + 1.0x2 + -1.0x3 + x6 = -10.0
+------------------------------------------------------------
+Iteration  1
+Non Basic Variables =  ['x1', 'x2', 'x3']
+Basic Variables =  ['x4', 'x5', 'x6']
+This is A martix
+[[ 1.  1.  1.  1.  0.  0.]
+ [-2. -1.  1.  0.  1.  0.]
+ [-0.  1. -1.  0.  0.  1.]]
+This is Xb
+[ 40. -10. -10.]
+This is c bottom row of table
+[ 2.  3.  1. -0. -0. -0.]
+This is Cb (coefficients of basic variable
+[0. 0. 0.]
+This is Cn (coefficients of non-basic variable
+[2. 3. 1. 0. 0. 0.]
+So the optimal value of objective function is: 0.0
+The value of most negative Xb is -10.0  Corresponding to row 2
+The ratios are for corresponding row [1. 3. 1. 0. 0. 0.]
+The minimum ratio is: 1.0
+The pivot element is  -2.0  and corresponding coordinates(1 based indexing) is 2   1
+------------------------------------------------------------
+Iteration  2
+Non Basic Variables =  ['x1', 'x2', 'x3', 'x5']
+Basic Variables =  ['x4', 'x1', 'x6']
+This is A martix
+[[ 0.   0.5  1.5  1.   0.5  0. ]
+ [ 1.   0.5 -0.5 -0.  -0.5 -0. ]
+ [ 0.   1.  -1.  -0.  -0.   1. ]]
+This is Xb
+[ 35.   5. -10.]
+This is c bottom row of table
+[-0.  2.  2.  0.  1.  0.]
+This is Cb (coefficients of basic variable
+[0. 2. 0.]
+This is Cn (coefficients of non-basic variable
+[0. 3. 1. 0. 0. 0.]
+So the optimal value of objective function is: 10.0
+The value of most negative Xb is -10.0  Corresponding to row 3
+The ratios are for corresponding row [0. 2. 2. 0. 0. 0.]
+The minimum ratio is: 2.0
+The pivot element is  1.0  and corresponding coordinates(1 based indexing) is 3   2
+------------------------------------------------------------
+Iteration  3
+Non Basic Variables =  ['x1', 'x2', 'x3', 'x5', 'x6']
+Basic Variables =  ['x4', 'x1', 'x2']
+This is A martix
+[[ 0.   0.   2.   1.   0.5 -0.5]
+ [ 1.   0.   0.   0.  -0.5 -0.5]
+ [ 0.   1.  -1.  -0.  -0.   1. ]]
+This is Xb
+[ 40.  10. -10.]
+This is c bottom row of table
+[-0. -0.  4.  0.  1. -2.]
+This is Cb (coefficients of basic variable
+[0. 2. 3.]
+This is Cn (coefficients of non-basic variable
+[0. 0. 1. 0. 0. 0.]
+So the optimal value of objective function is: -10.0
+The value of most negative Xb is -10.0  Corresponding to row 3
+The ratios are for corresponding row [0. 0. 4. 0. 0. 2.]
+The minimum ratio is: 2.0
+The pivot element is  1.0  and corresponding coordinates(1 based indexing) is 3   6
+------------------------------------------------------------
+Iteration  4
+Non Basic Variables =  ['x1', 'x2', 'x3', 'x5', 'x6']
+Basic Variables =  ['x4', 'x1', 'x6']
+This is A martix
+[[ 0.   0.5  1.5  1.   0.5  0. ]
+ [ 1.   0.5 -0.5  0.  -0.5  0. ]
+ [ 0.   1.  -1.  -0.  -0.   1. ]]
+This is Xb
+[ 35.   5. -10.]
+This is c bottom row of table
+[-0.  2.  2. -0.  1. -0.]
+This is Cb (coefficients of basic variable
+[0. 2. 0.]
+This is Cn (coefficients of non-basic variable
+[0. 0. 1. 0. 0. 3.]
+So the optimal value of objective function is: 10.0
+The value of most negative Xb is -10.0  Corresponding to row 3
+The ratios are for corresponding row [0. 2. 2. 0. 0. 0.]
+The minimum ratio is: 2.0
+The pivot element is  1.0  and corresponding coordinates(1 based indexing) is 3   2
+------------------------------------------------------------
+Iteration  5
+Non Basic Variables =  ['x1', 'x2', 'x3', 'x5', 'x6']
+Basic Variables =  ['x4', 'x1', 'x2']
+This is A martix
+[[ 0.   0.   2.   1.   0.5 -0.5]
+ [ 1.   0.   0.   0.  -0.5 -0.5]
+ [ 0.   1.  -1.  -0.  -0.   1. ]]
+This is Xb
+[ 40.  10. -10.]
+This is c bottom row of table
+[-0. -0.  4. -0.  1. -2.]
+This is Cb (coefficients of basic variable
+[0. 2. 0.]
+This is Cn (coefficients of non-basic variable
+[0. 0. 1. 0. 0. 3.]
+So the optimal value of objective function is: 20.0
+The value of most negative Xb is -10.0  Corresponding to row 3
+The ratios are for corresponding row [0. 0. 4. 0. 0. 2.]
+The minimum ratio is: 2.0
+The pivot element is  1.0  and corresponding coordinates(1 based indexing) is 3   6
+------------------------------------------------------------
+Iteration  6
+Non Basic Variables =  ['x1', 'x2', 'x3', 'x5', 'x6']
+Basic Variables =  ['x4', 'x1', 'x6']
+This is A martix
+[[ 0.   0.5  1.5  1.   0.5  0. ]
+ [ 1.   0.5 -0.5  0.  -0.5  0. ]
+ [ 0.   1.  -1.  -0.  -0.   1. ]]
+This is Xb
+[ 35.   5. -10.]
+This is c bottom row of table
+[-0.  2.  2. -0.  1. -0.]
+This is Cb (coefficients of basic variable
+[0. 2. 3.]
+This is Cn (coefficients of non-basic variable
+[0. 0. 1. 0. 0. 0.]
+So the optimal value of objective function is: -20.0
+The value of most negative Xb is -10.0  Corresponding to row 3
+The ratios are for corresponding row [0. 2. 2. 0. 0. 0.]
+The minimum ratio is: 2.0
+The pivot element is  1.0  and corresponding coordinates(1 based indexing) is 3   2
+------------------------------------------------------------
+Iteration  7
+Non Basic Variables =  ['x1', 'x2', 'x3', 'x5', 'x6']
+Basic Variables =  ['x4', 'x1', 'x2']
+This is A martix
+[[ 0.   0.   2.   1.   0.5 -0.5]
+ [ 1.   0.   0.   0.  -0.5 -0.5]
+ [ 0.   1.  -1.  -0.  -0.   1. ]]
+This is Xb
+[ 40.  10. -10.]
+This is c bottom row of table
+[-0. -0.  4. -0.  1. -2.]
+This is Cb (coefficients of basic variable
+[0. 2. 0.]
+This is Cn (coefficients of non-basic variable
+[0. 3. 1. 0. 0. 0.]
+So the optimal value of objective function is: 20.0
+The value of most negative Xb is -10.0  Corresponding to row 3
+The ratios are for corresponding row [0. 0. 4. 0. 0. 2.]
+The minimum ratio is: 2.0
+The pivot element is  1.0  and corresponding coordinates(1 based indexing) is 3   6
+------------------------------------------------------------
+Iteration  8
+Non Basic Variables =  ['x1', 'x2', 'x3', 'x5', 'x6']
+Basic Variables =  ['x4', 'x1', 'x6']
+This is A martix
+[[ 0.   0.5  1.5  1.   0.5  0. ]
+ [ 1.   0.5 -0.5  0.  -0.5  0. ]
+ [ 0.   1.  -1.  -0.  -0.   1. ]]
+This is Xb
+[ 35.   5. -10.]
+This is c bottom row of table
+[-0.  2.  2. -0.  1. -0.]
+This is Cb (coefficients of basic variable
+[0. 2. 0.]
+This is Cn (coefficients of non-basic variable
+[0. 3. 1. 0. 0. 0.]
+So the optimal value of objective function is: 10.0
+The value of most negative Xb is -10.0  Corresponding to row 3
+The ratios are for corresponding row [0. 2. 2. 0. 0. 0.]
+The minimum ratio is: 2.0
+The pivot element is  1.0  and corresponding coordinates(1 based indexing) is 3   2
+------------------------------------------------------------
+Iteration  9
+Non Basic Variables =  ['x1', 'x2', 'x3', 'x5', 'x6']
+Basic Variables =  ['x4', 'x1', 'x2']
+This is A martix
+[[ 0.   0.   2.   1.   0.5 -0.5]
+ [ 1.   0.   0.   0.  -0.5 -0.5]
+ [ 0.   1.  -1.  -0.  -0.   1. ]]
+This is Xb
+[ 40.  10. -10.]
+This is c bottom row of table
+[-0. -0.  4. -0.  1. -2.]
+This is Cb (coefficients of basic variable
+[0. 2. 3.]
+This is Cn (coefficients of non-basic variable
+[0. 0. 1. 0. 0. 0.]
+So the optimal value of objective function is: -10.0
+The value of most negative Xb is -10.0  Corresponding to row 3
+The ratios are for corresponding row [0. 0. 4. 0. 0. 2.]
+The minimum ratio is: 2.0
+The pivot element is  1.0  and corresponding coordinates(1 based indexing) is 3   6
+------------------------------------------------------------
+Iteration  10
+Non Basic Variables =  ['x1', 'x2', 'x3', 'x5', 'x6']
+Basic Variables =  ['x4', 'x1', 'x6']
+This is A martix
+[[ 0.   0.5  1.5  1.   0.5  0. ]
+ [ 1.   0.5 -0.5  0.  -0.5  0. ]
+ [ 0.   1.  -1.  -0.  -0.   1. ]]
+This is Xb
+[ 35.   5. -10.]
+This is c bottom row of table
+[-0.  2.  2. -0.  1. -0.]
+This is Cb (coefficients of basic variable
+[0. 2. 0.]
+This is Cn (coefficients of non-basic variable
+[0. 0. 1. 0. 0. 3.]
+So the optimal value of objective function is: 10.0
+The value of most negative Xb is -10.0  Corresponding to row 3
+The ratios are for corresponding row [0. 2. 2. 0. 0. 0.]
+The minimum ratio is: 2.0
+The pivot element is  1.0  and corresponding coordinates(1 based indexing) is 3   2
+The table has repeated. Due to this there is infinite iterations. Hence cannot solve by dual simplex.
+
+
+Output for question 6:
+The objective function to maximize is
+-5.0x1 -8.0x2  +  0.0
+-3.0x1 + -2.0x2 + x3 = -3.0
+-1.0x1 + -4.0x2 + x4 = -4.0
+1.0x1 + 1.0x2 + x5 = 5.0
+------------------------------------------------------------
+Iteration  1
+Non Basic Variables =  ['x1', 'x2']
+Basic Variables =  ['x3', 'x4', 'x5']
+This is A martix
+[[-3. -2.  1.  0.  0.]
+ [-1. -4.  0.  1.  0.]
+ [ 1.  1.  0.  0.  1.]]
+This is Xb
+[-3. -4.  5.]
+This is c bottom row of table
+[ 5.  8. -0. -0. -0.]
+This is Cb (coefficients of basic variable
+[0. 0. 0.]
+This is Cn (coefficients of non-basic variable
+[5. 8. 0. 0. 0.]
+So the optimal value of objective function is: 0.0
+The value of most negative Xb is -4.0  Corresponding to row 2
+The ratios are for corresponding row [5. 2. 0. 0. 0.]
+The minimum ratio is: 2.0
+The pivot element is  -4.0  and corresponding coordinates(1 based indexing) is 2   2
+------------------------------------------------------------
+Iteration  2
+Non Basic Variables =  ['x1', 'x2', 'x4']
+Basic Variables =  ['x3', 'x2', 'x5']
+This is A martix
+[[-2.5   0.    1.   -0.5  -0.  ]
+ [ 0.25  1.   -0.   -0.25 -0.  ]
+ [ 0.75  0.    0.    0.25  1.  ]]
+This is Xb
+[-1.  1.  4.]
+This is c bottom row of table
+[ 3. -0.  0.  2.  0.]
+This is Cb (coefficients of basic variable
+[0. 8. 0.]
+This is Cn (coefficients of non-basic variable
+[5. 0. 0. 0. 0.]
+So the optimal value of objective function is: 8.0
+The value of most negative Xb is -1.0  Corresponding to row 1
+The ratios are for corresponding row [1.2 0.  0.  4.  0. ]
+The minimum ratio is: 1.2
+The pivot element is  -2.5  and corresponding coordinates(1 based indexing) is 1   1
+------------------------------------------------------------
+Iteration  3
+Non Basic Variables =  ['x1', 'x2', 'x4', 'x3']
+Basic Variables =  ['x1', 'x2', 'x5']
+This is A martix
+[[ 1.  -0.  -0.4  0.2  0. ]
+ [ 0.   1.   0.1 -0.3 -0. ]
+ [ 0.   0.   0.3  0.1  1. ]]
+This is Xb
+[0.4 0.9 3.7]
+This is c bottom row of table
+[-0.   0.   1.2  1.4  0. ]
+This is Cb (coefficients of basic variable
+[5. 8. 0.]
+This is Cn (coefficients of non-basic variable
+[0. 0. 0. 0. 0.]
+So the optimal value of objective function is: 9.2
+------------------------------------------------------------
+The iterations have ended because no negative values of Xb are present
+This is the list of all the non-basic variables are  ['x1', 'x2', 'x4', 'x3']
+This is the list of all basic variables are  ['x1', 'x2', 'x5']
+The values for x are:
+['x1', 'x2', 'x3', 'x4', 'x5']
+So the Final value of objective function is: 9.2
